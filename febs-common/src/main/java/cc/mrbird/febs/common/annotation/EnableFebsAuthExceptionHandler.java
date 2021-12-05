@@ -12,6 +12,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(FebsAuthExceptionConfigure.class)
+@Deprecated
 public @interface EnableFebsAuthExceptionHandler {
 
 }

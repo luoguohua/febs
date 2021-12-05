@@ -7,11 +7,11 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8401
+        url: http://${febs-monitor-admin}:8401
         username: febs
         password: 123456
   autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
 
 eureka:
   instance:
@@ -22,7 +22,7 @@ eureka:
     instance-info-replication-interval-seconds: 30
     registry-fetch-interval-seconds: 3
     serviceUrl:
-      defaultZone: http://febs:123456@localhost:8001/register/eureka/
+      defaultZone: http://febs:123456@${febs-register}:8001/register/eureka/
 
 zuul:
   routes:
@@ -57,6 +57,9 @@ info:
     version: "@project.version@"
 
 management:
+  health:
+    redis:
+      enabled: false
   endpoints:
     web:
       exposure:

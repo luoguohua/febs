@@ -12,6 +12,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(FebsServerProtectConfigure.class)
+@Deprecated
 public @interface EnableFebsServerProtect {
 
 }

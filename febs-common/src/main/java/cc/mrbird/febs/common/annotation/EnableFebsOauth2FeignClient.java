@@ -12,6 +12,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(FebsOAuth2FeignConfigure.class)
+@Deprecated
 public @interface EnableFebsOauth2FeignClient {
 
 }
